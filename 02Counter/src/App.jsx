@@ -10,14 +10,16 @@ function App() {
   
   //let counter=20
 
+ 
+
  function addValue(){
-  console.log('value addded',counter)
   //counter=counter+1
-  setCounter(counter+1)
+  if(counter<20) setCounter(counter+1)
  }
 
+
  function removeValue(){
-  setCounter(counter-1)
+  if (counter>0) setCounter(counter-1)
  }
 
   return (
