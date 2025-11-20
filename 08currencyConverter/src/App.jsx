@@ -10,6 +10,8 @@ function App() {
 
 const currencyInfo=useCurrencyInfo(from)
 const options = Object.keys(currencyInfo)
+//console.log("currencyInfo",currencyInfo)
+//console.log("options",options)
 
 const swap = ()=>{
   setFrom(to)
@@ -29,6 +31,16 @@ const convert=()=>{
                 backgroundImage: `url('https://images.pexels.com/photos/1629172/pexels-photo-1629172.jpeg')`,
             }}
         >
+
+        <div className='flex'>
+            <div className="relative overflow-hidden">
+          <img
+            src="https://media.istockphoto.com/id/1541972789/photo/happy-mature-senior-indian-couple-holding-money-rupee-notes-in-hand-while-sitting-at-home.jpg?s=1024x1024&w=is&k=20&c=uecpRu8NN4dVanj-mnFiKLiTRrIAq-emsE64FXjAJA8="
+            alt="Product"
+            className="w-full h-72 object-cover transition-transform duration-300 hover:scale-110"
+          />
+        </div>
+
             <div className="w-full">
                 <div className="w-full max-w-md mx-auto border border-gray-30 rounded-lg p-5 backdrop-blur-sm bg-white/30">
                     <form
@@ -56,6 +68,7 @@ const convert=()=>{
                                 swap
                             </button>
                         </div>
+
                         <div className="w-full mt-1 mb-4">
                             <InputBox
                                 label="To"
@@ -66,12 +79,16 @@ const convert=()=>{
                                 
                             />
                         </div>
+                        
                         <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
                             Convert {from.toUpperCase()} to {to.toUpperCase()}
                         </button>
                     </form>
                 </div>
             </div>
+
+        </div>
+
         </div>
     );
 }
