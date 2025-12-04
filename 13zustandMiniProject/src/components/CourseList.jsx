@@ -1,10 +1,10 @@
 import React from "react"
 import useCourseStore from "../app/courseStore"
-import { useState } from "react"
+
 
 
 export const CourseList = ({course}) => {
-   const courses = useCourseStore((state) => state.courses)
+  
    const removeCourse= useCourseStore((state) => state.removeCourse)
    const toggleCourseStatus = useCourseStore((state) => state.toggleCourseStatus)
    //console.log(courses)

@@ -15,7 +15,7 @@ function App() {
      <div className='mb-4'>
         {
           courses.map((course) => 
-          <div key={course.id} className={`${course.completed?'bg-pink-400':'bg-slate-400'} mb-3 p-2 `} >
+          <div key={course.id} className={`${course.completed?'bg-orange-400':'bg-slate-400'} mb-3 p-2 `} >
               <CourseList course={course}/>
           </div>
          )
