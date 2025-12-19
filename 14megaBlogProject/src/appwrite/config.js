@@ -16,16 +16,16 @@ export class DatabaseService {
           this.storage = new Storage(this.client)
     }
 
-    async createPost ({title,slug,content,featuresImage,status,userId}){
+    async createPost ({title,slug,content,featuredImage,status,userId}){
         try {
             return await this.tablesDB.createRow({
                 databaseId:conf.appwriteDatabaseId,
                 tableId:conf.appwriteTableId,
-                rowId:slug,
+                rowId:ID.unique(),
                 data:{
                     title,
                     content,
-                    featuresImage,
+                    featuredImage,
                     status,
                     userId
                 }
@@ -36,7 +36,7 @@ export class DatabaseService {
     }
 
     //here we took slug because of that we get to know which doc we have to update
-    async updatePost (slug,{title,content,featuresImage,status}) {
+    async updatePost (slug,{title,content,featuredImage,status}) {
         try {
             return await this.tablesDB.updateRow({
                 databaseId:conf.appwriteDatabaseId,
@@ -45,7 +45,7 @@ export class DatabaseService {
                 data:{
                     title,
                     content,
-                    featuresImage,
+                    featuredImage,
                     status
 
                 }
@@ -84,14 +84,14 @@ export class DatabaseService {
             return await this.tablesDB.listRows({
                   databaseId:conf.appwriteDatabaseId,
                   tableId:conf.appwriteTableId,
-                  queries:[
-                      Query.equal('status', ['Active']),
-                      Query.limit(25),
-                  ]
+                   queries: [
+                         Query.equal('status', 'active')
+                    ]
             })
               
         } catch (error) {
              console.log('Appwrite Service :: getPosts :: error', error)
+             return false
         }
     }
 
@@ -139,6 +139,6 @@ export class DatabaseService {
 
 }
 
-const databaseService = new databaseService()
+const databaseService = new DatabaseService()
 
 export default databaseService

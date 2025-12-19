@@ -18,7 +18,7 @@ export class AuthService {
             const userAccount=await this.account.create({userId: ID.unique(),email,password,name})
             if (userAccount) {
                 // call another method
-                return this.login({email,password})
+                return this.login({email,password})//autoLogin
             } else {
                 return userAccount;
             }
@@ -39,10 +39,10 @@ export class AuthService {
         try {
             return await this.account.get()
         } catch (error) {
-            console.log('appwrite service :: getCurrentUser ::error',error)
+             console.log("Appwrite serive :: getCurrentUser :: error", error);
         }
 
-        return null
+         return null
     }
 
     async logOut () {

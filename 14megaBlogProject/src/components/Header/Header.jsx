@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom"
 
  function Header () {
 
-    const authStatus=useSelector((state) => state.auth.status)
+    const authStatus=useSelector((state) => state.authSlice.status)
     const navigate=useNavigate()
 
     const navItems = [
@@ -72,7 +72,7 @@ import { useNavigate } from "react-router-dom"
                         )
                     }
 
-                    //if authStatus is true then only next code will execute, to uske age ka display hoga
+                    {/* if authStatus is true then only next code will execute, to uske age ka display hoga */}
                     {authStatus && (
                         <li><LogoutBtn/></li>
                     )}

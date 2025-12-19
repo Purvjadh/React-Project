@@ -1,0 +1,1 @@
+## I have tried 2 days to solve why I am not able to see AllPost but I failed to find it out so now I have decided to make entire project again from scratch and to practice it

@@ -15,8 +15,10 @@ function Button ({
 
 }){
     return(
-        <button className={`px-4 py-2 rounded-lg ${className} ${textColor} ${bgColor}`}{...props}>{children}</button>
+        <button type={type} className={`px-4 py-2 rounded-lg  ${className} ${textColor} ${bgColor}`} {...props} >{children}</button>
     )
 }
+
+export default Button
 
 // hume bahut sari places par btn use karana padata hai esliye elisye production mai hum hamesha button ke liye ek separate component banake rakhate hai

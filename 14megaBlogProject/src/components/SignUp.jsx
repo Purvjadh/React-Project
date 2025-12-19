@@ -22,7 +22,7 @@ function SignUp(){
             if(userData){ 
                 const userData=await authService.getCurrentUser()
                 // this userData = USER object (name, email, id)
-                if(userData) dispatch(login({userData})) //Todo
+                if(userData) dispatch(login(userData)) //Todo
                 navigate('/')
             }
         } catch (error) {

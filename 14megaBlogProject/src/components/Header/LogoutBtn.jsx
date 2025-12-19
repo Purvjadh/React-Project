@@ -1,13 +1,13 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import authService from '../../appwrite/config'
+import authService from '../../appwrite/auth'
 import {logout} from '../../store/authSlice'
 
 function LogoutBtn (){
     const dispatch = useDispatch()
 
     const logOutHandler = () => {
-        authService.logout() //promises
+        authService.logOut() //promises
         .then(() => {
             dispatch(logout())//so that store remain updated about current information
         })
