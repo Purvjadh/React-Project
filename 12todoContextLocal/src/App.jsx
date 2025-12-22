@@ -32,6 +32,10 @@ useEffect(()=>{
 },
 [])
 
+useEffect(() => {
+  localStorage.setItem('todos',JSON.stringify(todos))
+},[todos])
+
   return (
     <TodoProvider value={{todos,addTodo,updateTodo,deleteTodo,toggleComplete}}>
    <div className="bg-[#172842] min-h-screen py-8">
